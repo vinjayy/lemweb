@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, MapPin, Phone, Mail, Globe, Zap, Shield, Target, Users, CheckCircle, ChevronRight, HardHat, Building2, Server, Cctv, Bell, Zap as Lightning, ArrowRight, Award } from 'lucide-react';
+import { Menu, X, MapPin, Phone, Mail, Globe, Zap, Shield, Target, Users, CheckCircle, ChevronRight, HardHat, Building2, Server, Cctv, Bell, Zap as Lightning, ArrowRight, Award, Info } from 'lucide-react';
 
 // --- COMPONENTS ---
 
@@ -206,20 +206,59 @@ const About = () => (
   </div>
 );
 
+const CountingNumber = ({ value, duration = 1000 }: { value: number; duration?: number }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTimestamp: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      setCount(Math.floor(progress * value));
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }, [value, duration]);
+
+  return <span>{count}</span>;
+};
+
 const Services = () => {
+  const galleryProjects = [
+    { id: 1, name: "SpaceX Starlink", year: "2024" },
+    { id: 2, name: "Bali Beach Hotel", year: "2024" },
+    { id: 3, name: "Equinix Data Center", year: "2024" },
+    { id: 4, name: "Transmart Mall", year: "2024" },
+    { id: 5, name: "Office Tower Jakarta", year: "2024" },
+    { id: 7, name: "Data Center JK-6", year: "2024" },
+    { id: 8, name: "Villa Uluwatu", year: "2024" },
+    { id: 9, name: "Starlink Ground Station", year: "2024" },
+    { id: 10, name: "Laboratory Tech Park", year: "2024" },
+  ];
+
   const allProjects = [
-    { year: "2025", name: "BW Digital Data Center Batam" },
-    { year: "2025", name: "PT. Data Center Indonesia JK-6 Cibitung" },
+    { year: "2024", name: "BW Digital Data Center Batam" },
+    { year: "2024", name: "PT. Data Center Indonesia JK-6 Cibitung" },
     { year: "2024", name: "Equinix Data Center Jakarta" },
     { year: "2024", name: "Dakota Data Center Batam" },
     { year: "2024", name: "Bali Beach Hotel" },
-    { year: "2023", name: "3R Hotel Manado" },
-    { year: "2022", name: "Hotel The Zuri Lubuk Linggau" },
-    { year: "2021", name: "PT. Data Center Indonesia JK-5 Cibitung" },
-    { year: "2020", name: "Transmart Cilegon" },
-    { year: "2019", name: "Hotel Yello Jambi" },
-    { year: "2017", name: "Hotel The Zuri Palembang" },
-    { year: "2014", name: "Hotel Surya Tretes Pasuruan" },
+    { year: "2024", name: "3R Hotel Manado" },
+    { year: "2024", name: "Hotel The Zuri Lubuk Linggau" },
+    { year: "2024", name: "PT. Data Center Indonesia JK-5 Cibitung" },
+    { year: "2024", name: "Transmart Cilegon" },
+    { year: "2024", name: "Hotel Yello Jambi" },
+    { year: "2024", name: "Hotel The Zuri Palembang" },
+    { year: "2024", name: "Hotel Surya Tretes Pasuruan" },
+  ];
+
+  const stats = [
+    { label: "SpaceX Starlink", count: 10, icon: <Lightning className="text-yellow-500" size={24} /> },
+    { label: "Hotel/Villa", count: 12, icon: <Building2 className="text-[#5168fa]" size={24} /> },
+    { label: "Mall", count: 6, icon: <Globe className="text-green-500" size={24} /> },
+    { label: "Data Center", count: 12, icon: <Server className="text-orange-500" size={24} /> },
+    { label: "Office/Lab", count: 4, icon: <HardHat className="text-gray-500" size={24} /> },
   ];
 
   return (
@@ -233,13 +272,34 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4 py-24">
         {/* Gallery Project */}
         <div className="mb-24">
-          <h2 className="text-3xl font-bold text-center text-[#136193] mb-12">Gallery Project</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 7, 8, 9, 10].map((i) => (
-              <div key={i} className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg group">
-                <img src={`/p${i}.jpeg`} alt="Project" className="w-full h-full object-cover transition-transform group-hover:scale-110" />
+          <h2 className="text-3xl font-bold text-[#136193] text-center mb-12">Gallery Project</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            {galleryProjects.map((p) => (
+              <div key={p.id} className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg group">
+                <img src={`/p${p.id}.jpeg`} alt={p.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
+                  <h3 className="text-white font-bold text-lg leading-tight">{p.name}</h3>
+                  <p className="text-blue-400 text-sm font-semibold">{p.year}</p>
+                </div>
               </div>
             ))}
+          </div>
+
+          {/* New Statistics Section */}
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100">
+            <h3 className="text-2xl font-bold text-[#136193] mb-8 border-b pb-4 uppercase tracking-wider text-center">Proyek yang sudah kami kerjakan</h3>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+              {stats.map((stat, i) => (
+                <div key={i} className="flex flex-col items-center p-6 bg-gray-50 rounded-2xl border border-gray-100 transition-all hover:shadow-md hover:-translate-y-1">
+                  <div className="mb-4 bg-white p-3 rounded-full shadow-sm">{stat.icon}</div>
+                  <div className="text-2xl font-black text-[#136193] mb-1">
+                    <CountingNumber value={stat.count} />
+                  </div>
+                  <div className="text-xs font-bold text-gray-500 uppercase tracking-tighter text-center">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
