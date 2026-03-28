@@ -227,30 +227,47 @@ const CountingNumber = ({ value, duration = 1000 }: { value: number; duration?: 
 
 const Services = () => {
   const galleryProjects = [
-    { id: 1, name: "SpaceX Starlink", year: "2024" },
-    { id: 2, name: "Bali Beach Hotel", year: "2024" },
-    { id: 3, name: "Equinix Data Center", year: "2024" },
-    { id: 4, name: "Transmart Mall", year: "2024" },
-    { id: 5, name: "Office Tower Jakarta", year: "2024" },
-    { id: 7, name: "Data Center JK-6", year: "2024" },
-    { id: 8, name: "Villa Uluwatu", year: "2024" },
-    { id: 9, name: "Starlink Ground Station", year: "2024" },
-    { id: 10, name: "Laboratory Tech Park", year: "2024" },
+    { id: "1a", name: "Hotel Surya Tretes", year: "2024" },
+    { id: "2a", name: "Hotel The Zuri Palembang", year: "2024" },
+    { id: "3a", name: "yello hotel jambi", year: "2023" },
+    { id: "4a", name: "transmart cilegon", year: "2024" },
+    { id: "5a", name: "pt dci jk-5 cibitung", year: "2024" },
+    { id: "6a", name: "grand zuri lubuk linggau", year: "2025" },
+    { id: "7a", name: "3R hotel manado", year: "2024" },
+    { id: "8a", name: "bali beach hotel", year: "2024" },
+    { id: "9a", name: "dakota data center batam", year: "2023" },
+    { id: "10a", name: "equinix data center jakarta", year: "2024" },
+    { id: "11a", name: "Transmart Jambi", year: "2018" },
+    { id: "12a", name: "Transmart Palembang", year: "2017" },
+    { id: "13a", name: "Transmart Pekanbaru", year: "2017" },
+    { id: "14a", name: "Transmart Pangkalpinang", year: "2019" },
+    { id: "15a", name: "Hotel Premier Padang", year: "2020" },
+    { id: "16a", name: "SpaceX Starlink Bandung", year: "2025" },
+    { id: "17a", name: "SpaceX Starlink Lamongan", year: "2025" },
+    { id: "18a", name: "SpaceX Starlink Banjarmasin", year: "2025" },
+    { id: "19a", name: "SpaceX Starlink Makassar", year: "2025" },
   ];
 
   const allProjects = [
-    { year: "2024", name: "BW Digital Data Center Batam" },
-    { year: "2024", name: "PT. Data Center Indonesia JK-6 Cibitung" },
-    { year: "2024", name: "Equinix Data Center Jakarta" },
-    { year: "2024", name: "Dakota Data Center Batam" },
-    { year: "2024", name: "Bali Beach Hotel" },
-    { year: "2024", name: "3R Hotel Manado" },
-    { year: "2024", name: "Hotel The Zuri Lubuk Linggau" },
-    { year: "2024", name: "PT. Data Center Indonesia JK-5 Cibitung" },
-    { year: "2024", name: "Transmart Cilegon" },
-    { year: "2024", name: "Hotel Yello Jambi" },
-    { year: "2024", name: "Hotel The Zuri Palembang" },
-    { year: "2024", name: "Hotel Surya Tretes Pasuruan" },
+    { name: "Hotel Surya Tretes", year: "2024" },
+    { name: "Hotel The Zuri Palembang", year: "2024" },
+    { name: "yello hotel jambi", year: "2023" },
+    { name: "transmart cilegon", year: "2024" },
+    { name: "pt dci jk-5 cibitung", year: "2024" },
+    { name: "grand zuri lubuk linggau", year: "2025" },
+    { name: "3R hotel manado", year: "2024" },
+    { name: "bali beach hotel", year: "2024" },
+    { name: "dakota data center batam", year: "2023" },
+    { name: "equinix data center jakarta", year: "2024" },
+    { name: "Transmart Jambi", year: "2018" },
+    { name: "Transmart Palembang", year: "2017" },
+    { name: "Transmart Pekanbaru", year: "2017" },
+    { name: "Transmart Pangkalpinang", year: "2019" },
+    { name: "Hotel Premier Padang", year: "2020" },
+    { name: "SpaceX Starlink Bandung", year: "2025" },
+    { name: "SpaceX Starlink Lamongan", year: "2025" },
+    { name: "SpaceX Starlink Banjarmasin", year: "2025" },
+    { name: "SpaceX Starlink Makassar", year: "2025" },
   ];
 
   const stats = [
@@ -277,7 +294,7 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {galleryProjects.map((p) => (
               <div key={p.id} className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg group">
-                <img src={`/p${p.id}.jpeg`} alt={p.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <img src={`/${p.id}.png`} alt={p.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
                   <h3 className="text-white font-bold text-lg leading-tight">{p.name}</h3>
                   <p className="text-blue-400 text-sm font-semibold">{p.year}</p>
