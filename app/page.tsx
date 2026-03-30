@@ -229,14 +229,14 @@ const Services = () => {
   const galleryProjects = [
     { id: "1a", name: "Hotel Surya Tretes", year: "2024" },
     { id: "2a", name: "Hotel The Zuri Palembang", year: "2024" },
-    { id: "3a", name: "yello hotel jambi", year: "2023" },
-    { id: "4a", name: "transmart cilegon", year: "2024" },
-    { id: "5a", name: "pt dci jk-5 cibitung", year: "2024" },
-    { id: "6a", name: "grand zuri lubuk linggau", year: "2025" },
-    { id: "7a", name: "3R hotel manado", year: "2024" },
-    { id: "8a", name: "bali beach hotel", year: "2024" },
-    { id: "9a", name: "dakota data center batam", year: "2023" },
-    { id: "10a", name: "equinix data center jakarta", year: "2024" },
+    { id: "3a", name: "Yello Hotel Jambi", year: "2023" },
+    { id: "4a", name: "Transmart Cilegon", year: "2024" },
+    { id: "5a", name: "PT DCI JK-5 Cibitung", year: "2024" },
+    { id: "6a", name: "Grand Zuri Lubuk Linggau", year: "2025" },
+    { id: "7a", name: "3R Hotel Manado", year: "2024" },
+    { id: "8a", name: "Bali Beach Hotel", year: "2024" },
+    { id: "9a", name: "Dakota Data Center Batam", year: "2023" },
+    { id: "10a", name: "Equinix Data Center Jakarta", year: "2024" },
     { id: "11a", name: "Transmart Jambi", year: "2018" },
     { id: "12a", name: "Transmart Palembang", year: "2017" },
     { id: "13a", name: "Transmart Pekanbaru", year: "2017" },
@@ -251,14 +251,14 @@ const Services = () => {
   const allProjects = [
     { name: "Hotel Surya Tretes", year: "2024" },
     { name: "Hotel The Zuri Palembang", year: "2024" },
-    { name: "yello hotel jambi", year: "2023" },
-    { name: "transmart cilegon", year: "2024" },
-    { name: "pt dci jk-5 cibitung", year: "2024" },
-    { name: "grand zuri lubuk linggau", year: "2025" },
-    { name: "3R hotel manado", year: "2024" },
-    { name: "bali beach hotel", year: "2024" },
-    { name: "dakota data center batam", year: "2023" },
-    { name: "equinix data center jakarta", year: "2024" },
+    { name: "Yello Hotel Jambi", year: "2023" },
+    { name: "Transmart Cilegon", year: "2024" },
+    { name: "PT DCI JK-5 Cibitung", year: "2024" },
+    { name: "Grand Zuri Lubuk Linggau", year: "2025" },
+    { name: "3R Hotel Manado", year: "2024" },
+    { name: "Bali Beach Hotel", year: "2024" },
+    { name: "Dakota Data Center Batam", year: "2023" },
+    { name: "Equinix Data Center Jakarta", year: "2024" },
     { name: "Transmart Jambi", year: "2018" },
     { name: "Transmart Palembang", year: "2017" },
     { name: "Transmart Pekanbaru", year: "2017" },
@@ -287,9 +287,9 @@ const Services = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-24">
-        {/* Gallery Project */}
+        {/* Gallery Proyek */}
         <div className="mb-24">
-          <h2 className="text-3xl font-bold text-[#136193] text-center mb-12">Gallery Project</h2>
+          <h2 className="text-3xl font-bold text-[#136193] text-center mb-12">Gallery Proyek</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {galleryProjects.map((p) => (
@@ -320,7 +320,7 @@ const Services = () => {
           </div>
         </div>
 
-        {/* List Project */}
+        {/* Daftar Proyek */}
         <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100">
           <h2 className="text-2xl font-bold text-[#136193] mb-8 border-b pb-4 uppercase tracking-wider">Daftar Pengalaman Proyek</h2>
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-4">
